@@ -162,6 +162,7 @@ pipeline {
     post {
         always {
             step([$class: 'LogParserPublisher', failBuildOnError: true, projectRulePath: 'LogParser\\LogParserRules.txt', useProjectRule: true])
+            nunit testResultsPattern: 'TestResult.xml'
         }
         failure {
             emailext body: '''$DEFAULT_CONTENT
