@@ -83,6 +83,7 @@ pipeline {
                                         "sqlPass=mamboo" | Add-Content "BKSInstaller\\Installation.properties"'''
                         bat '''cd BKSInstaller
                                BKSInstaller.exe'''
+                        bat '%windir%\\system32\\inetsrv\\appcmd start site /site.name:dev-pilot.bks'
                     }
                 )
                 
@@ -141,7 +142,7 @@ pipeline {
         failure {
             emailext body: '''$DEFAULT_CONTENT
                             The site can be reached at:
-                            http://dev-pilot.bks/Login.aspx''', subject: 'Dev-Pilot Build Faliled', to: 'amitbl@britannica-ks.com;innar@britannica-ks.com;baraku@britannica-ks.com'
+                            http://dev-pilot.bks/Login.aspx''', subject: 'Dev-Pilot Build Faliled', to: 'amitbl@britannica-ks.com;innar@britannica-ks.com;baraku@britannica-ks.com,yarder@britannica-ks.com'
         }
     }
 }
