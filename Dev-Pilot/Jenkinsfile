@@ -140,7 +140,7 @@ pipeline {
         failure {
             emailext body: '''$DEFAULT_CONTENT
                             The site can be reached at:
-                            http://dev-pilot.bks/Login.aspx''', subject: 'Dev-Pilot Build Faliled', to: 'amitbl@britannica-ks.com;innar@britannica-ks.com;baraku@britannica-ks.com,yarder@britannica-ks.com'
+                            http://dev-pilot.bks/Login.aspx''', subject: 'Dev-Pilot Build Faliled', to: 'amitbl@britannica-ks.com;innar@britannica-ks.com;baraku@britannica-ks.com,Yardenr@britannica-ks.com'
         }
     }
 }
