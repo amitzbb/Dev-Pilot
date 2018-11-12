@@ -1,10 +1,12 @@
-pipeline{
-    timestamps {
+pipeline{ 
         agent { node { label 'AmitPC' } }
         stages{
             stage('TestTimeStemp'){
-              powershell """ write-host "Amit" """
+                timestamps {
+                    powershell """ write-host "Amit" """
+                }
+              
             }
         }
-    }
+    
 }
