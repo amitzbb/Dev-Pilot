@@ -1,7 +1,7 @@
 pipeline {
     agent { node { label 'AmitPC' } }
-    timestamps {
      stages {
+         timestamps {
         stage('Pre Build Step') {
             steps {
                 powershell'''write-host "Amit" '''
@@ -9,5 +9,5 @@ pipeline {
             }
         }
      }
-    }
+    
 }
