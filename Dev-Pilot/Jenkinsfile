@@ -1,14 +1,10 @@
-pipeline {
-    agent { node { label 'AmitPC' } }
-     stages {
-         timestamps {
-        stage('Pre Build Step') {
-            steps {
-                powershell'''write-host "Amit" '''
-                 
+pipeline{
+    timestamps {
+        agent { node { label 'AmitPC' } }
+        stages{
+            stage('TestTimeStemp'){
+              powershell """ write-host "Amit" """
             }
         }
-     }
-    
-}
+    }
 }
